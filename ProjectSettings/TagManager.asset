@@ -10,8 +10,8 @@ TagManager:
   - America
   - Europe
   - Asia
-  - BotHoopScore
   - Obstical
+  - Hoop
   layers:
   - Default
   - TransparentFX

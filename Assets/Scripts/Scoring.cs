@@ -6,25 +6,63 @@ using UnityEngine.SceneManagement;
 
 public class Scoring : MonoBehaviour
 {
-    public int TotalScore;
+    public int TotalGameScore;
     public Slider AudienceSlider;
+    public GameObject CheckOrigin;
+    public GameObject Checkpoint1;
+    public GameObject Checkpoint2;
+    public GameObject CurrentCheckpoint;
 
-    private void Update() {
+    private void Start() {
 
-        
-        
+        CheckPoints();
+        transform.position = CurrentCheckpoint.transform.position;
+    }
+   
+    private void Update() 
+    {
+        CheckPoints();
+        AudienceSlider.value = TotalGameScore;
     }
 
     private void OnTriggerEnter(Collider other) {
         
-        if (other.tag == "Player")
+        if (other.tag == "Hoop")
         {
-            TotalScore = TotalScore + 10;
+            TotalGameScore = TotalGameScore + 10;
         }
 
         if (other.tag == "Obstical")
         {
-            TotalScore = TotalScore - 5;
+            TotalGameScore = TotalGameScore - 5;
+            transform.position = CurrentCheckpoint.transform.position;
         }
+    }
+
+    void Onend() 
+    {
+        if (TotalGameScore == 150)
+        {
+            SceneManager.LoadScene("MainLobby");  
+        }
+    }
+
+    void CheckPoints(){
+
+        if(TotalGameScore == 0)
+        {
+            CurrentCheckpoint = CheckOrigin;  
+        }
+        
+        if(TotalGameScore == 50)
+        {
+            CurrentCheckpoint = Checkpoint1;  
+        }
+
+        if(TotalGameScore == 100)
+        {
+            CurrentCheckpoint = Checkpoint2;     
+        }
+
     }
 }

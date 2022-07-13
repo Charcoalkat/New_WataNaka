@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 6638026955865618216}
   m_Layer: 0
   m_Name: ScoreTigger
-  m_TagString: Untagged
+  m_TagString: Hoop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
