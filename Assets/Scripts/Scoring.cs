@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Scoring : MonoBehaviour
 {
     public int TotalGameScore;
+    private int Accumulative;
     public Slider AudienceSlider;
     public GameObject CheckOrigin;
     public GameObject Checkpoint1;
@@ -30,12 +31,14 @@ public class Scoring : MonoBehaviour
         if (other.tag == "Hoop")
         {
             TotalGameScore = TotalGameScore + 10;
+            Accumulative = Accumulative + 10;
         }
 
         if (other.tag == "Obstical")
         {
-            TotalGameScore = TotalGameScore - 5;
+            TotalGameScore = TotalGameScore - Accumulative;
             transform.position = CurrentCheckpoint.transform.position;
+            Accumulative = 0;
         }
     }
 
