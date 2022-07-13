@@ -9,17 +9,17 @@ public class TentBehaviour : MonoBehaviour
         
         if (other.tag == "Europe")
         {
-            SceneManager.LoadScene("GameEurope"); 
+            SceneManager.LoadScene("Game.Europe"); 
         }
 
         if (other.tag == "Asia")
         {
-            SceneManager.LoadScene("GameAsia");
+            SceneManager.LoadScene("Game.Asia");
         }
 
         if (other.tag == "America")
         {
-            SceneManager.LoadScene("GameAmerica");       
+            SceneManager.LoadScene("Game.America");       
         }
     }
 }
