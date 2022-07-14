@@ -12,6 +12,7 @@ TagManager:
   - Asia
   - Obstical
   - Hoop
+  - Floor
   layers:
   - Default
   - TransparentFX
